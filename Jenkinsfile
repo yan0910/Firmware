@@ -250,6 +250,7 @@ pipeline {
           agent {
             docker {
               image 'px4io/px4-dev-ros:2018-03-30'
+              args '-e CCACHE_BASEDIR=$WORKSPACE -v ${CCACHE_DIR}:${CCACHE_DIR}:rw -e HOME=$WORKSPACE'
             }
           }
           steps {
